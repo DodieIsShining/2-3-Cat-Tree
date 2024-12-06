@@ -12,8 +12,30 @@
             #text {
                 display :none;
             }
+            body {
+                display : flex;
+                flex-direction: column;
+                align-items: center;
+                height : 100vh;
+                text-align: center;
+            }
+            p {
+                display: none;
+                margin: 10px;
+                padding: 150px;
+
+            }
+            button{
+                cursor : pointer;
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+            button:hover{
+                transform: scale(1.1);
+                background-color : #7cda60;
+            }
         </style>
         <script>
+            var last = null;
             function popbutton(textId) {
                 var txt1 = document.getElementById("text1");
                 var txt2 = document.getElementById("text2");
@@ -24,12 +46,6 @@
                 else{
                 text1.style.display = "none";
                 text2.style.display = "none";
-                text3.style.display = "none";
-                text4.style.display = "none";
-                text5.style.display = "none";
-                text6.style.display = "none";
-                text7.style.display = "none";
-                text8.style.display = "none";
                 targtext.style.display = "block";
                 }
             }
@@ -37,9 +53,9 @@
 </head>
 
 <body>
-    <h3 id="switch"><a href="smoothie.html">SWITCH</a></h3>
-    <h3 id="au"><a href="aboutus.html">About us!</a></h3>
     <h1>Assemble your boat</h1>
+    <p id = "text1" style= "display:none;"><img src="mot1.png" alt="Moteur1" width=50% height=50%></p>
+    <p id = "text2" style= "display:none;"><img src="mot2.png" alt="Moteur2" width=50% height=50% ></p>
     <ul class="tabs">
         <li data-tab-target="#motors" class="active tab">Motors</li>
         <li data-tab-target="#sails" class="tab">Sails</li>
@@ -48,30 +64,21 @@
         <li data-tab-target="#close" class="tab">X</li>
     </ul>
 
+
     <div class="tab-content">
         <div id="motors" data-tab-content class="active">
             <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="mot1.png" alt="Moteur1" width=50% height=50%></button>
-            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="mot2.png" alt="Moteur2" width=50% height=50%></button>
-            <p id = "text1" style= "display:none;">MOTEUR 1</p>
-            <p id = "text2" style= "display:none;">MOTEUR 2</p>
+            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="mot2.png" alt="Moteur2" width=50% height=50% ></button>
+            <button onclick>Dernier texte<a href="final.html"></a></button>
         </div>
         <div id="sails" data-tab-content>
-            <button onclick = "popbutton('text3')" style="width:150px" style="height:150px"><img src="voile1.png" alt="Voile 1" width=50% height=50%></button>
-            <button onclick = "popbutton('text4')" style="width:150px" style="height:150px"><img src="voile2.png" alt="Voile 2" width=50% height=50%></button>
-            <p id = "text3" style= "display:none;">VOILE 1</p>
-            <p id = "text4" style= "display:none;">VOILE 2</p>
+            <h1>Test2</h1>
         </div>
         <div id="hulls" data-tab-content>
-            <button onclick = "popbutton('text5')" style="width:150px" style="height:150px"><img src="coque1.png" alt="Coque 1" width=50%          height=50%></button>
-            <button onclick = "popbutton('text6')" style="width:150px" style="height:150px"><img src="coque2.png" alt="Coque 2" width=50% height=50%></button>
-            <p id = "text5" style= "display:none;">COQUE 1</p>
-            <p id = "text6" style= "display:none;">COQUE 2</p>
+            <h1>Test3</h1>
         </div>
         <div id="misc" data-tab-content>
-            <button onclick = "popbutton('text7')" style="width:150px" style="height:150px"><img src="misc1.png" alt="Misc 1" width=50% height=50%></button>
-            <button onclick = "popbutton('text8')" style="width:150px" style="height:150px"><img src="misc2.png" alt="Misc 2" width=50% height=50%></button>
-            <p id = "text7" style= "display:none;">MISC 1</p>
-            <p id = "text8" style= "display:none;">MISC 2</p>
+            <h1>Test4</h1>
         </div>
         <div id="close" data-tab-content>
         </div>
