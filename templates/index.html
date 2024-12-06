@@ -39,22 +39,37 @@
         <script>
             var last = null;
             function popbutton(textId) {
-                var txt1 = document.getElementById("text1");
-                var txt2 = document.getElementById("text2");
-                var targtext = document.getElementById(textId);
-                if (targtext.style.display ==="block"){
-                    targtext.style.display ="none";
-                }
-                else{
-                    text1.style.display = "none";
-                    text2.style.display = "none";
-                    targtext.style.display = "block";
+                var allText = document.querySelectorAll('p.appear');
+            allText.forEach(function (element) {
+                element.style.display = 'none'; // Cacher tous les éléments à chaque sélection
+            });
+
+            var targText = document.getElementById(textId);
+            targText.style.display = "block"; // Afficher l'élément sélectionné
+            showSelectedComponents(); // Mettre à jour la liste des composants sélectionnés
+        }
+
+                
+                function selectComponent(type, component) 
+                {
+                    // Enregistrer chaque composant dans localStorage selon son type
+            localStorage.setItem(type, component);
+            showSelectedComponents();  // Afficher les composants sélectionnés
                 }
 
-                function selectMotor(motor) { 
-                localStorage.setItem('lastButton', motor);
-            }
-            }
+                function showSelectedComponents() {
+                    const motors = localStorage.getItem('mot1') || localStorage.getItem('mot2');
+            const sails = localStorage.getItem('sail1') || localStorage.getItem('sail2');
+            const hulls = localStorage.getItem('hull1') || localStorage.getItem('hull2');
+            const misc = localStorage.getItem('misc1') || localStorage.getItem('misc2');
+
+            const selectedComponents = document.getElementById('selected-components');
+            ;
+        }
+
+            window.onload = function() {
+        showSelectedComponents(); 
+    }
         </script>
 </head>
 
@@ -81,30 +96,27 @@
 
     <div class="tab-content">
         <div id="motors" data-tab-content class="active">
-            <button onclick = "popbutton('text1'); selectMotor('mot1');" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
-            <button onclick = "popbutton('text2'); selectMotor('mot2');" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text1'); selectComponent('mot1');" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
+            <button onclick = "popbutton('text2'); selectComponent('mot2');" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
             <button onclick="window.location.href='final.html'">Final</button>
-
-        </div>
+       </div>
         <div id="sails" data-tab-content>
-            <button onclick = "popbutton('text3'); selectMotor('sail1');" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
-            <button onclick = "popbutton('text4'); selectMotor('sail2');" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text3'); selectComponent('sail1');" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
+            <button onclick = "popbutton('text4'); selectComponent('sail2');" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
             <button onclick="window.location.href='final.html'">Final</button>
-
         </div>
         <div id="hulls" data-tab-content>
-            <button onclick = "popbutton('text5'); selectMotor('hull1');" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
-            <button onclick = "popbutton('text6'); selectMotor('hull2');" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text5'); selectComponent('hull1');" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
+            <button onclick = "popbutton('text6'); selectComponent('hull2');" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
             <button onclick="window.location.href='final.html'">Final</button>
-
         </div>
         <div id="misc" data-tab-content>
-            <button onclick = "popbutton('text7'); selectMotor('misc1');" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
-            <button onclick = "popbutton('text8'); selectMotor('misc2');" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text7'); selectComponent('misc1');" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
+            <button onclick = "popbutton('text8'); selectComponent('misc2');" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
             <button onclick="window.location.href='final.html'">Final</button>
-
         </div>
-        <div id="close" data-tab-content>
+
+    <div id="close" data-tab-content>
         </div>
     </div>
 </body>
