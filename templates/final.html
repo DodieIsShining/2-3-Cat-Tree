@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaceHolder</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+    <link rel = "stylesheet" href="../static/styles/style.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        p {
+            display: block;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Fonction pour afficher le dernier choix enregistré
+        function showLastButtonChoice() {
+            var lastButton = localStorage.getItem("lastButton");
+
+            var resultText = document.getElementById("result-text");
+
+            console.log("Dernier choix enregistré :", lastButton);  // Affichage pour débogage
+
+            if (lastButton === "mot1") {
+                resultText.innerHTML = "You selected the first motor. Here is your choice:";
+                document.getElementById("mot1Image").style.display = "block";
+                document.getElementById("mot2Image").style.display = "none";
+            } else if (lastButton === "mot2") {
+                resultText.innerHTML = "You selected the second motor. Here is your choice:";
+                document.getElementById("mot2Image").style.display = "block";
+                document.getElementById("mot1Image").style.display = "none";
+            } 
+
+
+            if (lastButton === "sail1"){
+                resultText.innerHTML = "You selected the first sail. Here is your choice:";
+                document.getElementById("sail1Image").style.display = "block";
+                document.getElementById("sail2Image").style.display = "none";
+            }
+            else if (lastButton == "sail2"){
+                resultText.innerHTML = "You selected the second sail. Here is your choice:";
+                document.getElementById("mot2Image").style.display = "block";
+                document.getElementById("mot1Image").style.display = "none";
+            }
+
+            if (lastButton === "hull1"){
+                resultText.innerHTML = "You selected the first hull. Here is your choice:";
+                document.getElementById("hull1Image").style.display = "block";
+                document.getElementById("hull2Image").style.display = "none";
+            }
+            else if (lastButton == "hull2"){
+                resultText.innerHTML = "You selected the second hull. Here is your choice:";
+                document.getElementById("hull2Image").style.display = "block";
+                document.getElementById("hull1Image").style.display = "none";
+            }
+
+
+            if (lastButton === "misc1"){
+                resultText.innerHTML = "You selected the first misc. Here is your choice:";
+                document.getElementById("misc1Image").style.display = "block";
+                document.getElementById("misc2Image").style.display = "none";
+            }
+            else if (lastButton == "misc2"){
+                resultText.innerHTML = "You selected the second misc. Here is your choice:";
+                document.getElementById("misc2Image").style.display = "block";
+                document.getElementById("misc1Image").style.display = "none";
+            }
+            
+            else {
+                resultText.innerHTML = "No motor selected yet. Please choose a motor.";
+                document.getElementById("mot1Image").style.display = "none";
+                document.getElementById("mot2Image").style.display = "none";
+            }
+        }
+
+        window.onload = function() {
+            showLastButtonChoice();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Final</h1>
+    <p id="result-text">Loading your choice...</p>
+
+    <!-- Affichage des images des moteurs choisis -->
+    <div id="mot1Image" style="display:none;">
+        <img src="mot1.png" alt="Moteur1" width="50%" height="50%">
+    </div>
+    <div id="mot2Image" style="display:none;">
+        <img src="mot2.png" alt="Moteur2" width="50%" height="50%">
+    </div>
+
+    <p><a href="index.html">Return to choose again</a></p>
+</body>
+
+</html>
