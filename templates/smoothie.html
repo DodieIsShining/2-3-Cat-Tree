@@ -38,7 +38,7 @@
         </style>
         <script>
             var last = null;
-            function popbutton(textId) {
+            function popbutton1(textId) {
                 var txt1 = document.getElementById("text1");
                 var txt2 = document.getElementById("text2");
                 var targtext = document.getElementById(textId);
@@ -46,14 +46,47 @@
                     targtext.style.display ="none";
                 }
                 else{
-                text1.style.display = "none";
-                text2.style.display = "none";
-                text3.style.display = "none";
-                text4.style.display = "none";
-                text5.style.display = "none";
-                text6.style.display = "none";
-                text7.style.display = "none";
-                text8.style.display = "none";
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            function popbutton2(textId) {
+                var txt1 = document.getElementById("text3");
+                var txt2 = document.getElementById("text4");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            function popbutton3(textId) {
+                var txt1 = document.getElementById("text5");
+                var txt2 = document.getElementById("text6");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            function popbutton4(textId) {
+                var txt1 = document.getElementById("text7");
+                var txt2 = document.getElementById("text8");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
                 targtext.style.display = "block";
                 }
             }
@@ -62,9 +95,9 @@
 
 <body>
     <h3 id="switch"><a href="index.html">SWITCH</a></h3>
-    <h3 id="au"><a href="aboutus/html">About us!</a></h3>
+    <h3 id="au"><a href="aboutus.html">About us!</a></h3>
     <h1>Prepare your smoothie</h1>
-    <p class="appear" style="display:block"><img src="../image/blender.jpg"></p>
+    <p style="display:block"><img src="../image/blender.png"></p>
     <p class="appear" id = "text1" style= "display:none;"><img src="../image/liquid1.png" alt="Liquid1" width=50% height=50%></p>
     <p class="appear" id = "text2" style= "display:none;"><img src="../image/liquid2.png" alt="Liquid2" width=50% height=50% ></p>
     <p class="appear" id = "text3" style= "display:none;"><img src="../image/fruit1.png" alt="Fruit1" width=50% height=50%></p>
@@ -85,20 +118,20 @@
 
     <div class="tab-content">
         <div id="liquids" data-tab-content class="active">
-            <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="../image/liquid1.png" alt="Liquid1" width=50% height=50%></button>
-            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="../image/liquid2.png" alt="Liquid2" width=50% height=50% ></button>
+            <button onclick = "popbutton1('text1')" style="width:150px" style="height:150px"><img src="../image/liquid1.png" alt="Liquid1" width=50% height=50%></button>
+            <button onclick = "popbutton1('text2')" style="width:150px" style="height:150px"><img src="../image/liquid2.png" alt="Liquid2" width=50% height=50% ></button>
         </div>
         <div id="fruits" data-tab-content>
-            <button onclick = "popbutton('text3')" style="width:150px" style="height:150px"><img src="../image/fruit1.png" alt="Fruit1" width=50% height=50%></button>
-            <button onclick = "popbutton('text4')" style="width:150px" style="height:150px"><img src="../image/fruit2.png" alt="Fruit2" width=50% height=50% ></button>
+            <button onclick = "popbutton2('text3')" style="width:150px" style="height:150px"><img src="../image/fruit1.png" alt="Fruit1" width=50% height=50%></button>
+            <button onclick = "popbutton2('text4')" style="width:150px" style="height:150px"><img src="../image/fruit2.png" alt="Fruit2" width=50% height=50% ></button>
         </div>
         <div id="vegetables" data-tab-content>
-            <button onclick = "popbutton('text5')" style="width:150px" style="height:150px"><img src="../image/veg1.png" alt="Veg1" width=50% height=50%></button>
-            <button onclick = "popbutton('text6')" style="width:150px" style="height:150px"><img src="../image/veg2.png" alt="Veg2" width=50% height=50% ></button>
+            <button onclick = "popbutton3('text5')" style="width:150px" style="height:150px"><img src="../image/veg1.png" alt="Veg1" width=50% height=50%></button>
+            <button onclick = "popbutton3('text6')" style="width:150px" style="height:150px"><img src="../image/veg2.png" alt="Veg2" width=50% height=50% ></button>
         </div>
         <div id="toppings" data-tab-content>
-            <button onclick = "popbutton('text7')" style="width:150px" style="height:150px"><img src="../image/top1.png" alt="Top1" width=50% height=50%></button>
-            <button onclick = "popbutton('text8')" style="width:150px" style="height:150px"><img src="../image/top2.png" alt="Top2" width=50% height=50% ></button>
+            <button onclick = "popbutton4('text7')" style="width:150px" style="height:150px"><img src="../image/top1.png" alt="Top1" width=50% height=50%></button>
+            <button onclick = "popbutton4('text8')" style="width:150px" style="height:150px"><img src="../image/top2.png" alt="Top2" width=50% height=50% ></button>
         </div>
         <div id="close" data-tab-content>
         </div>

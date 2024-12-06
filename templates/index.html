@@ -37,54 +37,76 @@
             }
         </style>
         <script>
-            var last = null;
-            function popbutton(textId) {
-                var allText = document.querySelectorAll('p.appear');
-            allText.forEach(function (element) {
-                element.style.display = 'none'; // Cacher tous les éléments à chaque sélection
-            });
-
-            var targText = document.getElementById(textId);
-            targText.style.display = "block"; // Afficher l'élément sélectionné
-            showSelectedComponents(); // Mettre à jour la liste des composants sélectionnés
-        }
-
-                
-                function selectComponent(type, component) 
-                {
-                    // Enregistrer chaque composant dans localStorage selon son type
-            localStorage.setItem(type, component);
-            showSelectedComponents();  // Afficher les composants sélectionnés
+        var last = null;
+            function popbutton1(textId) {
+                var txt1 = document.getElementById("text1");
+                var txt2 = document.getElementById("text2");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
                 }
-
-                function showSelectedComponents() {
-                    const motors = localStorage.getItem('mot1') || localStorage.getItem('mot2');
-            const sails = localStorage.getItem('sail1') || localStorage.getItem('sail2');
-            const hulls = localStorage.getItem('hull1') || localStorage.getItem('hull2');
-            const misc = localStorage.getItem('misc1') || localStorage.getItem('misc2');
-
-            const selectedComponents = document.getElementById('selected-components');
-            ;
-        }
-
-            window.onload = function() {
-        showSelectedComponents(); 
-    }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            function popbutton2(textId) {
+            var txt1 = document.getElementById("text3");
+                var txt2 = document.getElementById("text4");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            function popbutton3(textId) {
+                var txt1 = document.getElementById("text5");
+                var txt2 = document.getElementById("text6");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            function popbutton4(textId) {
+                var txt1 = document.getElementById("text7");
+                var txt2 = document.getElementById("text8");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                txt1.style.display = "none";
+                txt2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+            
         </script>
 </head>
 
 <body>
     <h3 id="switch"><a href="smoothie.html">SWITCH</a></h3>
-    <h3 id="au"><a href="aboutus/html">About us!</a></h3>
+    <h3 id="au"><a href="aboutus.html">About us!</a></h3>
     <h1>Assemble your boat</h1>
-    <p class="appear" id = "text1" style= "display:none;"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></p>
-    <p class="appear" id = "text2" style= "display:none;"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></p>
-    <p class="appear" id = "text3" style= "display:none;"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></p>
-    <p class="appear" id = "text4" style= "display:none;"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></p>
-    <p class="appear" id = "text5" style= "display:none;"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></p>
-    <p class="appear" id = "text6" style= "display:none;"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></p>
-    <p class="appear" id = "text7" style= "display:none;"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></p>
-    <p class="appear" id = "text8" style= "display:none;"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></p>
+    <button id="final" onclick="window.location.href='final.html'">Final</button>
+    <p class="appear" class="motors" id = "text1" style= "display:none;"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></p>
+    <p class="appear" class="motord" id = "text2" style= "display:none;"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></p>
+    <p class="appear" class="voiles" id = "text3" style= "display:none;"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></p>
+    <p class="appear" class="voiles" id = "text4" style= "display:none;"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></p>
+    <p class="appear" class="coques" id = "text5" style= "display:none;"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></p>
+    <p class="appear" class="coques" id = "text6" style= "display:none;"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></p>
+    <p class="appear" class="miscs" id = "text7" style= "display:none;"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></p>
+    <p class="appear" class="miscs" id = "text8" style= "display:none;"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></p>
     <ul class="tabs">
         <li data-tab-target="#motors" class="active tab">Motors</li>
         <li data-tab-target="#sails" class="tab">Sails</li>
@@ -96,24 +118,20 @@
 
     <div class="tab-content">
         <div id="motors" data-tab-content class="active">
-            <button onclick = "popbutton('text1'); selectComponent('mot1');" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
-            <button onclick = "popbutton('text2'); selectComponent('mot2');" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
-            <button onclick="window.location.href='final.html'">Final</button>
+            <button onclick = "popbutton1('text1'); selectComponent('mot1');" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
+            <button onclick = "popbutton1('text2'); selectComponent('mot2');" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
        </div>
         <div id="sails" data-tab-content>
-            <button onclick = "popbutton('text3'); selectComponent('sail1');" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
-            <button onclick = "popbutton('text4'); selectComponent('sail2');" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
-            <button onclick="window.location.href='final.html'">Final</button>
+            <button onclick = "popbutton2('text3'); selectComponent('sail1');" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
+            <button onclick = "popbutton2('text4'); selectComponent('sail2');" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
         </div>
         <div id="hulls" data-tab-content>
-            <button onclick = "popbutton('text5'); selectComponent('hull1');" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
-            <button onclick = "popbutton('text6'); selectComponent('hull2');" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
-            <button onclick="window.location.href='final.html'">Final</button>
+            <button onclick = "popbutton3('text5'); selectComponent('hull1');" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
+            <button onclick = "popbutton3('text6'); selectComponent('hull2');" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
         </div>
         <div id="misc" data-tab-content>
-            <button onclick = "popbutton('text7'); selectComponent('misc1');" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
-            <button onclick = "popbutton('text8'); selectComponent('misc2');" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
-            <button onclick="window.location.href='final.html'">Final</button>
+            <button onclick = "popbutton4('text7'); selectComponent('misc1');" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
+            <button onclick = "popbutton4('text8'); selectComponent('misc2');" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
         </div>
 
     <div id="close" data-tab-content>
