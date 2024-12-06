@@ -7,7 +7,7 @@
     <title>Ocean's Body</title>
     <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
     <link rel = "stylesheet" href="../static/styles/style.css">
-    <script src="script.js" defer></script>
+    <script src="./script.js" defer></script>
     <style>
             #text {
                 display :none;
@@ -95,8 +95,8 @@
 </head>
 
 <body>
-    <h3 id="switch"><a href="{{ url_for('templates', filename='smoothie.html') }}">SWITCH</a></h3>
-    <h3 id="au"><a href="{{ url_for('templates', filename='aboutus.html') }}">About us!</a></h3>
+    <h3 id="switch"><a href="./smoothie.html">SWITCH</a></h3>
+    <h3 id="au"><a href="./aboutus.html">About us!</a></h3>
     <h1>Assemble your boat</h1>
     <button id="final" onclick="window.location.href='final.html'">Final</button>
     <p class="appear" class="motors" id = "text1" style= "display:none;"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></p>
