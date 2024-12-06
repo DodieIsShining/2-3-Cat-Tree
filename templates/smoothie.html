@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlaceHolder</title>
+    <link href="{{ url_for('static', filename='styles/stylesmoothie.css') }}" rel="stylesheet" />
+    <link rel = "stylesheet" href="../static/styles/stylesmoothie.css">
+    <script src="script.js" defer></script>
+    <style>
+            #text {
+                display :none;
+            }
+        </style>
+        <script>
+            function popbutton(textId) {
+                var txt1 = document.getElementById("text1");
+                var txt2 = document.getElementById("text2");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                text1.style.display = "none";
+                text2.style.display = "none";
+                text3.style.display = "none";
+                text4.style.display = "none";
+                text5.style.display = "none";
+                text6.style.display = "none";
+                text7.style.display = "none";
+                text8.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+        </script>
+</head>
+
+<body>
+    <h3 id="switch"><a href="index.html">SWITCH</a></h3>
+    <h3 id="au"><a href="aboutus.html">About us!</a></p>
+    <h1>Prepare your smoothie</h1>
+    <ul class="tabs">
+        <li data-tab-target="#fruits" class="active tab">Fruits</li>
+        <li data-tab-target="#vegetables" class="tab">Vegetables</li>
+        <li data-tab-target="#spices" class="tab">Spices</li>
+        <li data-tab-target="#toppings" class="tab">Toppings</li>
+        <li data-tab-target="#close" class="tab">X</li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="fruits" data-tab-content class="active">
+            <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="fruit1.png" alt="Fruit1" width=50% height=50%></button>
+            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="fruit2.png" alt="Fruit2" width=50% height=50%></button>
+            <p id = "text1" style= "display:none;">FRUIT 1</p>
+            <p id = "text2" style= "display:none;">FRUIT 2</p>
+        </div>
+        <div id="vegetables" data-tab-content>
+            <button onclick = "popbutton('text3')" style="width:150px" style="height:150px"><img src="veg1.png" alt="Vegetable 1" width=50% height=50%></button>
+            <button onclick = "popbutton('text4')" style="width:150px" style="height:150px"><img src="veg2.png" alt="Vegetable 2" width=50% height=50%></button>
+            <p id = "text3" style= "display:none;">VEGETABLE 1</p>
+            <p id = "text4" style= "display:none;">VEGETABLE 2</p>
+        </div>
+        <div id="spices" data-tab-content>
+            <button onclick = "popbutton('text5')" style="width:150px" style="height:150px"><img src="spice1.png" alt="Spice 1" width=50% height=50%></button>
+            <button onclick = "popbutton('text6')" style="width:150px" style="height:150px"><img src="spice2.png" alt="Spice 2" width=50% height=50%></button>
+            <p id = "text5" style= "display:none;">SPICE 1</p>
+            <p id = "text6" style= "display:none;">SPICE 2</p>
+        </div>
+        <div id="toppings" data-tab-content>
+            <button onclick = "popbutton('text7')" style="width:150px" style="height:150px"><img src="topping1.png" alt="Topping 1" width=50% height=50%></button>
+            <button onclick = "popbutton('text8')" style="width:150px" style="height:150px"><img src="topping2.png" alt="Topping 2" width=50% height=50%></button>
+            <p id = "text7" style= "display:none;">TOPPING 1</p>
+            <p id = "text8" style= "display:none;">TOPPING 2</p>
+        </div>
+        <div id="close" data-tab-content>
+        </div>
+    </div>
+</body>
+
+</html>

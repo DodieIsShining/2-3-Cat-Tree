@@ -20,10 +20,10 @@
     height:auto;
     padding:0.8%;
     width:100%;
-    border-top: 5px solid #6521ff;
+    border-top: 5px solid #990243;
     position:fixed;
     bottom:0;
-    background-color:#8d5cff;
+    background-color:#cf025b;
 }
 
 .tab
@@ -34,12 +34,12 @@
 
 .tab.active
 {
-    background-color: #8f5eff;
+    background-color: #fc388c;
 }
 
 .tab:hover
 {
-    background-color: #6521ff;
+    background-color: #990243;
 }
 
 .tab-content
@@ -49,45 +49,44 @@
     position:fixed;
     width:100%;
     bottom:11.5%;
-    background-color: #b899ff;
-    border-top: 5px solid #8d5cff;
+    background-color: #fc388c;
+    border-top: 5px solid #cf025b;
 }
 
 h1
 {
-    color:#30009c;
-    padding:0;
-    top:0;
     position:fixed;
+    color:#990243;
+    top:0;
 }
 
 #switch
 {
-    color:#30009c;
-    padding:0;
+    position:fixed;
+    color:black;
     top:0;
     right:0;
-    position:fixed;
 }
 
 #switch:hover
 {
-    color:#4804e0;
+    color:gray;
 }
 
 #au
 {
-    color:#30009c;
-    padding:0;
+    position:fixed;
+    color:black;
     top:0;
     left:0;
-    position:fixed;
 }
 
 body {
     padding: 0;
     margin: 0;
-    background-image: url("../../image/back.png");
+    background-image: url("../../image/back2.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
