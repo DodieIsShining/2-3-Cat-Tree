@@ -4,16 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Weather Conditions</title>
+    <title>PlaceHolder</title>
     <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+    <link rel = "stylesheet" href="../static/styles/style.css">
+    <script src="script.js" defer></script>
+    <style>
+            #text {
+                display :none;
+            }
+        </style>
+        <script>
+            function popbutton(textId) {
+                var txt1 = document.getElementById("text1");
+                var txt2 = document.getElementById("text2");
+                var targtext = document.getElementById(textId);
+                if (targtext.style.display ==="block"){
+                    targtext.style.display ="none";
+                }
+                else{
+                text1.style.display = "none";
+                text2.style.display = "none";
+                targtext.style.display = "block";
+                }
+            }
+        </script>
 </head>
 
 <body>
-    <h1>Get Weather Conditions</h1>
-    <form action="/weather">
-        <input type="text" name="city" id="city" placeholder="Enter a City" />
-        <button type="submit">Submit</button>
-    </form>
+    <h1>Assemble your boat</h1>
+    <ul class="tabs">
+        <li data-tab-target="#motors" class="active tab">Motors</li>
+        <li data-tab-target="#sails" class="tab">Sails</li>
+        <li data-tab-target="#hulls" class="tab">Hulls</li>
+        <li data-tab-target="#misc" class="tab">Misc.</li>
+        <li data-tab-target="#close" class="tab">X</li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="motors" data-tab-content class="active">
+            <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="mot1.png" alt="Moteur1" width=50% height=50%></button>
+            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="mot2.png" alt="Moteur2" width=50% height=50% ></button>
+            <p id = "text1" style= "display:none;">MOTEUR 1</p>
+            <p id = "text2" style= "display:none;">MOTEUR 2</p>
+        </div>
+        <div id="sails" data-tab-content>
+            <h1>Test2</h1>
+        </div>
+        <div id="hulls" data-tab-content>
+            <h1>Test3</h1>
+        </div>
+        <div id="misc" data-tab-content>
+            <h1>Test4</h1>
+        </div>
+        <div id="close" data-tab-content>
+        </div>
+    </div>
 </body>
 
 </html>
