@@ -1,0 +1,109 @@
+<!DOCTYPE html>                                                                 
+<html>                                                                          
+<head>                                                                          
+    <style>                                                                     
+        body {                                                                  
+            margin: 0;                                                          
+            height: 100vh;                                                      
+            display: flex;                                                      
+            flex-direction: column;                                             
+            justify-content: center;                                            
+            align-items: center;                                                
+            transform-origin: center;                                           
+            transition: background-color 0.2s ease;                             
+        }                                                                       
+                                                                                
+        h1, h2 {                                                                
+            margin: 10px 0;                                                     
+        }                                                                       
+                                                                                
+                                                                                
+        button {                                                                
+            margin-top: 20px;                                                   
+            padding: 10px 20px;                                                 
+            font-size: 16px;                                                    
+            background-color: #007BFF;                                          
+            color: white;                                                       
+            border: none;                                                       
+            border-radius: 5px;                                                 
+            cursor: pointer;                                                    
+            transition: background-color 0.2s ease;                             
+        }                                                                       
+                                                                                
+        button:hover {                                                          
+            background-color: #0056b3;                                          
+        }                                                                       
+    </style>                                                                    
+</head>                                                                         
+<body>                                                                          
+    <h1 style="font-size:70px;">ABOUT US</h1>                                   
+    <p style="text-align:center; font-weight:bold; font-size:30px;">Hiii! this is us : 2-3-Cat-Tree!</p>
+    <p style="text-align:center; font-size:17px">We are five students from EPITA who love cats and computer science, and we created this fun little web app based on 6 different challenges.
+    <br>We hope you enjoy experimenting with it :D                              
+    <br><br>Enjoy your smoothies!</p>                                           
+    <button id="startButton">Zoom</button>                                      
+    <p style="position: fixed; bottom: 0; width:100%; text-align:center">PS. meow meow meow :3
+    <script>                                                                    
+        let scale = 1;                                                          
+        let zoomIn = true;                                                      
+        let rotation = 0;                                                       
+        let animationRunning = false;                                           
+        let animId;                                                             
+        let colorChangeId;                                                      
+        let colourIndex = 0;                                                    
+                                                                                
+         const rainbowColors = [                                                
+            "#F09EA7",                                                          
+            "#F6CA94",                                                          
+            "#FAFABE",                                                          
+            "#C1EBC0",                                                          
+            "#C7CAFF",                                                          
+            "#CDABEB",                                                          
+            "#F6C2F3"                                                           
+        ];                                                                      
+                                                                                
+                                                                                
+        function animatePage() {                                                
+            if (!animationRunning) return;                                      
+            if (zoomIn) {                                                       
+                scale += 0.005;                                                 
+                if (scale >= 2.5) zoomIn = false;                               
+            } else {                                                            
+                scale -= 0.005;                                                 
+                if (scale <= 1) zoomIn = true;                                  
+            }                                                                   
+                                                                                
+            rotation += 1;                                                      
+            if (rotation >= 360) rotation -= 360;                               
+                                                                                
+            document.body.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+                                                                                
+            animId = requestAnimationFrame(animatePage);                        
+        }                                                                       
+                                                                                
+        function changeBackgroundColor() {                                      
+                document.body.style.backgroundColor = rainbowColors[colourIndex];
+                colourIndex = (colourIndex + 1) % rainbowColors.length;         
+        }                                                                       
+                                                                                
+        const startButton = document.getElementById("startButton");             
+        startButton.addEventListener("click", () => {                           
+            if (animationRunning)                                               
+            {                                                                   
+                animationRunning = false;                                       
+                cancelAnimationFrame(animId);                                   
+                clearInterval(colorChangeId);                                   
+                startButton.innerText = "Zoom";                                 
+                document.body.style.backgroundColor = "";                       
+            }                                                                   
+            else                                                                
+            {                                                                   
+                animationRunning = true;                                        
+                animatePage();                                                  
+                colorChangeId = setInterval(changeBackgroundColor, 250);        
+                startButton.innerText = "Stop";                                 
+            }                                                                   
+        });                                                                     
+    </script>                                                                   
+</body>                                                                         
+</html>   
