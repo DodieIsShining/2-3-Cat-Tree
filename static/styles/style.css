@@ -84,6 +84,19 @@ h1
     position:fixed;
 }
 
+#final
+{
+    position:fixed;
+    right:0;
+    top:50%;
+}
+
+.appear
+{
+    position:fixed; 
+    top:20%;
+}
+
 body {
     padding: 0;
     margin: 0;

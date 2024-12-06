@@ -27,6 +27,8 @@
             }
             button{
                 cursor : pointer;
+                margin-left:50px;
+                margin-right:50px;
                 transition: transform 0.3s ease, background-color 0.3s ease;
             }
             button:hover{
@@ -46,6 +48,12 @@
                 else{
                 text1.style.display = "none";
                 text2.style.display = "none";
+                text3.style.display = "none";
+                text4.style.display = "none";
+                text5.style.display = "none";
+                text6.style.display = "none";
+                text7.style.display = "none";
+                text8.style.display = "none";
                 targtext.style.display = "block";
                 }
             }
@@ -53,9 +61,18 @@
 </head>
 
 <body>
+    <h3 id="switch"><a href="smoothie.html">SWITCH</a></h3>
+    <h3 id="au"><a href="aboutus/html">About us!</a></h3>
     <h1>Assemble your boat</h1>
-    <p id = "text1" style= "display:none;"><img src="mot1.png" alt="Moteur1" width=50% height=50%></p>
-    <p id = "text2" style= "display:none;"><img src="mot2.png" alt="Moteur2" width=50% height=50% ></p>
+    <p class="appear" id = "text1" style= "display:none;"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></p>
+    <p class="appear" id = "text2" style= "display:none;"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></p>
+    <p class="appear" id = "text3" style= "display:none;"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></p>
+    <p class="appear" id = "text4" style= "display:none;"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></p>
+    <p class="appear" id = "text5" style= "display:none;"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></p>
+    <p class="appear" id = "text6" style= "display:none;"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></p>
+    <p class="appear" id = "text7" style= "display:none;"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></p>
+    <p class="appear" id = "text8" style= "display:none;"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></p>
+    <button onclick id="final">Dernier texte<a href="final.html"></a></button>
     <ul class="tabs">
         <li data-tab-target="#motors" class="active tab">Motors</li>
         <li data-tab-target="#sails" class="tab">Sails</li>
@@ -67,18 +84,20 @@
 
     <div class="tab-content">
         <div id="motors" data-tab-content class="active">
-            <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="mot1.png" alt="Moteur1" width=50% height=50%></button>
-            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="mot2.png" alt="Moteur2" width=50% height=50% ></button>
-            <button onclick>Dernier texte<a href="final.html"></a></button>
+            <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
+            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
         </div>
         <div id="sails" data-tab-content>
-            <h1>Test2</h1>
+            <button onclick = "popbutton('text3')" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
+            <button onclick = "popbutton('text4')" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
         </div>
         <div id="hulls" data-tab-content>
-            <h1>Test3</h1>
+            <button onclick = "popbutton('text5')" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
+            <button onclick = "popbutton('text6')" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
         </div>
         <div id="misc" data-tab-content>
-            <h1>Test4</h1>
+            <button onclick = "popbutton('text7')" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
+            <button onclick = "popbutton('text8')" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
         </div>
         <div id="close" data-tab-content>
         </div>
