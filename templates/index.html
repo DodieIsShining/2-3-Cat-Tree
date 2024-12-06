@@ -46,16 +46,14 @@
                     targtext.style.display ="none";
                 }
                 else{
-                text1.style.display = "none";
-                text2.style.display = "none";
-                text3.style.display = "none";
-                text4.style.display = "none";
-                text5.style.display = "none";
-                text6.style.display = "none";
-                text7.style.display = "none";
-                text8.style.display = "none";
-                targtext.style.display = "block";
+                    text1.style.display = "none";
+                    text2.style.display = "none";
+                    targtext.style.display = "block";
                 }
+
+                function selectMotor(motor) { 
+                localStorage.setItem('lastButton', motor);
+            }
             }
         </script>
 </head>
@@ -72,7 +70,6 @@
     <p class="appear" id = "text6" style= "display:none;"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></p>
     <p class="appear" id = "text7" style= "display:none;"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></p>
     <p class="appear" id = "text8" style= "display:none;"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></p>
-    <button onclick id="final">Dernier texte<a href="final.html"></a></button>
     <ul class="tabs">
         <li data-tab-target="#motors" class="active tab">Motors</li>
         <li data-tab-target="#sails" class="tab">Sails</li>
@@ -84,20 +81,28 @@
 
     <div class="tab-content">
         <div id="motors" data-tab-content class="active">
-            <button onclick = "popbutton('text1')" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
-            <button onclick = "popbutton('text2')" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text1'); selectMotor('mot1');" style="width:150px" style="height:150px"><img src="../image/mot1.png" alt="Moteur1" width=50% height=50%></button>
+            <button onclick = "popbutton('text2'); selectMotor('mot2');" style="width:150px" style="height:150px"><img src="../image/mot2.png" alt="Moteur2" width=50% height=50% ></button>
+            <button onclick="window.location.href='final.html'">Final</button>
+
         </div>
         <div id="sails" data-tab-content>
-            <button onclick = "popbutton('text3')" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
-            <button onclick = "popbutton('text4')" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text3'); selectMotor('sail1');" style="width:150px" style="height:150px"><img src="../image/voile1.png" alt="Voile1" width=50% height=50%></button>
+            <button onclick = "popbutton('text4'); selectMotor('sail2');" style="width:150px" style="height:150px"><img src="../image/voile2.png" alt="Voile2" width=50% height=50% ></button>
+            <button onclick="window.location.href='final.html'">Final</button>
+
         </div>
         <div id="hulls" data-tab-content>
-            <button onclick = "popbutton('text5')" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
-            <button onclick = "popbutton('text6')" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text5'); selectMotor('hull1');" style="width:150px" style="height:150px"><img src="../image/coque1.png" alt="Coque1" width=50% height=50%></button>
+            <button onclick = "popbutton('text6'); selectMotor('hull2');" style="width:150px" style="height:150px"><img src="../image/coque2.png" alt="Coque2" width=50% height=50% ></button>
+            <button onclick="window.location.href='final.html'">Final</button>
+
         </div>
         <div id="misc" data-tab-content>
-            <button onclick = "popbutton('text7')" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
-            <button onclick = "popbutton('text8')" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
+            <button onclick = "popbutton('text7'); selectMotor('misc1');" style="width:150px" style="height:150px"><img src="../image/misc1.png" alt="Misc1" width=50% height=50%></button>
+            <button onclick = "popbutton('text8'); selectMotor('misc2');" style="width:150px" style="height:150px"><img src="../image/misc2.png" alt="Misc2" width=50% height=50% ></button>
+            <button onclick="window.location.href='final.html'">Final</button>
+
         </div>
         <div id="close" data-tab-content>
         </div>
