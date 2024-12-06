@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlaceHolder</title>
     <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
-    <link rel = "stylesheet" href="../static/styles/style.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
     <script src="script.js" defer></script>
     <style>
         body {
@@ -26,84 +26,105 @@
         h1 {
             margin-bottom: 20px;
         }
+
+        .hidden {
+            display: none;
+        }
+
+        .component-image {
+            display: none; 
+            margin-top: 20px;
+        }
     </style>
     <script>
-        // Fonction pour afficher le dernier choix enregistré
         function showLastButtonChoice() {
-            var lastButton = localStorage.getItem("lastButton");
+            var lastButtonMotor = localStorage.getItem("lastButtonMotor");
+            var lastButtonSail = localStorage.getItem("lastButtonSail");
+            var lastButtonHull = localStorage.getItem("lastButtonHull");
+            var lastButtonMisc = localStorage.getItem("lastButtonMisc");
 
             var resultText = document.getElementById("result-text");
 
-            console.log("Dernier choix enregistré :", lastButton);  // Affichage pour débogage
+            console.log("Dernier choix moteur :", lastButtonMotor);
+            console.log("Dernier choix voile :", lastButtonSail);
+            console.log("Dernier choix coque :", lastButtonHull);
+            console.log("Dernier choix accessoire :", lastButtonMisc);
 
-            if (lastButton === "mot1") {
-                resultText.innerHTML = "You selected the first motor. Here is your choice:";
-                document.getElementById("mot1Image").style.display = "block";
-                document.getElementById("mot2Image").style.display = "none";
-            } else if (lastButton === "mot2") {
-                resultText.innerHTML = "You selected the second motor. Here is your choice:";
-                document.getElementById("mot2Image").style.display = "block";
-                document.getElementById("mot1Image").style.display = "none";
-            } 
+            resultText.innerHTML = "Loading your choice...";
 
+            var allImages = document.querySelectorAll(".component-image");
+            allImages.forEach(function(img) {
+                img.style.display = "none"; 
+            });
 
-            if (lastButton === "sail1"){
-                resultText.innerHTML = "You selected the first sail. Here is your choice:";
-                document.getElementById("sail1Image").style.display = "block";
-                document.getElementById("sail2Image").style.display = "none";
-            }
-            else if (lastButton == "sail2"){
-                resultText.innerHTML = "You selected the second sail. Here is your choice:";
-                document.getElementById("mot2Image").style.display = "block";
-                document.getElementById("mot1Image").style.display = "none";
-            }
+            if (lastButtonMotor === "mot1") {
+                resultText.innerHTML = "You selected the first motor.";
+                document.getElementById("mot1Image").style.display = "block"; 
+            } else if (lastButtonMotor === "mot2") {
+                resultText.innerHTML = "You selected the second motor.";
+                document.getElementById("mot2Image").style.display = "block"; }
 
-            if (lastButton === "hull1"){
-                resultText.innerHTML = "You selected the first hull. Here is your choice:";
-                document.getElementById("hull1Image").style.display = "block";
-                document.getElementById("hull2Image").style.display = "none";
-            }
-            else if (lastButton == "hull2"){
-                resultText.innerHTML = "You selected the second hull. Here is your choice:";
-                document.getElementById("hull2Image").style.display = "block";
-                document.getElementById("hull1Image").style.display = "none";
+            if (lastButtonSail === "sail1") {
+                resultText.innerHTML += "<br>You selected the first sail.";
+                document.getElementById("sail1Image").style.display = "block"; 
+            } else if (lastButtonSail === "sail2") {
+                resultText.innerHTML += "<br>You selected the second sail.";
+                document.getElementById("sail2Image").style.display = "block";
             }
 
+            if (lastButtonHull === "hull1") {
+                resultText.innerHTML += "<br>You selected the first hull.";
+                document.getElementById("hull1Image").style.display = "block"; 
+            } else if (lastButtonHull === "hull2") {
+                resultText.innerHTML += "<br>You selected the second hull.";
+                document.getElementById("hull2Image").style.display = "block"; 
+            }
 
-            if (lastButton === "misc1"){
-                resultText.innerHTML = "You selected the first misc. Here is your choice:";
+            if (lastButtonMisc === "misc1") {
+                resultText.innerHTML += "<br>You selected the first accessory.";
                 document.getElementById("misc1Image").style.display = "block";
-                document.getElementById("misc2Image").style.display = "none";
-            }
-            else if (lastButton == "misc2"){
-                resultText.innerHTML = "You selected the second misc. Here is your choice:";
+            } else if (lastButtonMisc === "misc2") {
+                resultText.innerHTML += "<br>You selected the second accessory.";
                 document.getElementById("misc2Image").style.display = "block";
-                document.getElementById("misc1Image").style.display = "none";
-            }
-            
-            else {
-                resultText.innerHTML = "No motor selected yet. Please choose a motor.";
-                document.getElementById("mot1Image").style.display = "none";
-                document.getElementById("mot2Image").style.display = "none";
             }
         }
 
         window.onload = function() {
-            showLastButtonChoice();
+            showLastButtonChoice(); 
         }
     </script>
 </head>
 
 <body>
     <h1>Final</h1>
-    <p id="result-text">Loading your choice...</p>
+    <p id="result-text">The human's body is like the ocean... :</p>
 
-    <!-- Affichage des images des moteurs choisis -->
-    <div id="mot1Image" style="display:none;">
-        <img src="mot1.png" alt="Moteur1" width="50%" height="50%">
+    <div id="mot1Image">
+        <img src="motor1.png" alt="Moteur1" width="70%" height="70%">   ==   <img src="coffee.png" alt="coffee" width="70%" height="70%">
     </div>
-    <div id="mot2Image" style="display:none;">
-        <img src="mot2.png" alt="Moteur2" width="50%" height="50%">
+    <div id="mot2Image">
+        <img src="motor2.png" alt="Moteur2" width="70%" height="70%">   ==   <img src="milk.png" alt="milk" width="70%" height="70%">
+    </div>
+
+    <div id="sail1Image">
+        <img src="voile1.png" alt="Sail1" width="70%" height="70%">   ==   <img src="carrot.png" alt="carrot" width="70%" height="70%">
+    </div>
+    <div id="sail2Image">
+        <img src="voile2.png" alt="Sail2" width="70%" height="70%">   ==   <img src="avocado.png" alt="avocado" width="70%" height="70%">
+    </div>
+
+    <div id="hull1Image">
+        <img src="coque1.png" alt="Hull1" width="70%" height="70%">   ==   <img src="apple.png" alt="apple" width="70%" height="70%">
+    </div>
+    <div id="hull2Image" >
+        <img src="coque2.png" alt="Hull2" width="70%" height="70%">   ==   <img src="banana.png" alt="banana" width="70%" height="70%">
+    </div>
+
+    <div id="misc1Image">
+        <img src="misc1.png" alt="Misc1" width="70%" height="70%">   ==   <img src="leaf_tea.png" alt="leaf_tea" width="70%" height="70%">
+    </div>
+    <div id="misc2Image">
+        <img src="misc2.png" alt="Misc2" width="70%" height="70%">   ==   <img src="sugar.png" alt="sugar" width="70%" height="70%">
     </div>
 
     <p><a href="index.html">Return to choose again</a></p>
